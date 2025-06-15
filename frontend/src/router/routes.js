@@ -7,7 +7,9 @@ const routes = [
       { path: 'signUp', component: () => import('pages/screensSignUp.vue') },
       { path: 'forgotPassword', component: () => import('src/pages/screensForgotPassword.vue') },
       { path: 'home', component: () => import('src/pages/screensDashboard.vue') },
-      { path: 'forgotPassword', component: () => import('src/pages/screensForgotPassword.vue') },
+      { path: 'dropOff', component: () => import('src/pages/screensDropOff.vue') },
+      { path: 'pickup', component: () => import('src/pages/screensPickupTracking.vue') },
+      { path: 'queue', component: () => import('src/pages/screensQueueManagement..vue') },
     ]
   },
 

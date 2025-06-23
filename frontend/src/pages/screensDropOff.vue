@@ -21,12 +21,12 @@
                                     First name<span style="color: red;">*</span>
                                 </div>
                                 <q-input
-                                filled
-                                dense
-                                v-model="text"
-                                class="no-focus"
-                                input-class="text-black"
-                                color="accent"
+                                    filled
+                                    dense
+                                    v-model="text"
+                                    class="no-focus"
+                                    input-class="text-black"
+                                    color="accent"
                                 />
                             </div>
 
@@ -35,12 +35,12 @@
                                     Last name<span style="color: red;">*</span>
                                 </div>
                                 <q-input
-                                filled
-                                dense
-                                v-model="text"
-                                class="no-focus"
-                                input-class="text-black"
-                                color="accent"
+                                    filled
+                                    dense
+                                    v-model="text"
+                                    class="no-focus"
+                                    input-class="text-black"
+                                    color="accent"
                                 />
                             </div>
                         </div>
@@ -80,7 +80,7 @@
                     <div class="form-card q-mt-lg">
                         <div class="text-subtitle1 text-weight-bold">Service Selection</div>
                         <div class="row q-col-gutter-md" style="width: 100%;">
-                            <div class="col-6">
+                            <div class="col-xs-12 col-sm-6">
                                 <q-btn
                                     flat
                                     class="q-pa-md full-height full-width"
@@ -101,7 +101,7 @@
                                 </q-btn>
                             </div>
 
-                            <div class="col-6">
+                            <div class="col-xs-12 col-sm-6">
                                 <q-btn
                                     flat
                                     class="q-pa-md full-height full-width"
@@ -124,7 +124,7 @@
                         </div>
 
                         <div class="row q-col-gutter-md q-mb-md" style="width: 100%;">
-                            <div class="col-6">
+                            <div class="col-xs-12 col-sm-6">
                                 <q-btn
                                     flat
                                     class="q-pa-md full-height full-width"
@@ -145,7 +145,7 @@
                                 </q-btn>
                             </div>
 
-                            <div class="col-6">
+                            <div class="col-xs-12 col-sm-6">
                                 <q-btn
                                     flat
                                     class="q-pa-md full-height full-width"

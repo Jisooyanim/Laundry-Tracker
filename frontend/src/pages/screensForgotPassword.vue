@@ -9,25 +9,31 @@
                 </div>
 
                 <h5 class="q-mt-sm q-mb-none">Forgot your password?</h5>
-                <p class="q-mt-none q-mb-none" style="text-align: justify">If you can't remember your password, please enter your username 
+                <p class="q-mt-md q-mb-none" style="text-align: justify">If you can't remember your password, please enter your username 
                 below and click the "Request password reset" button.</p>
-                <p class="q-mt-none" style="text-align: justify">An email with reset instructions will be sent to your registered email address.</p>
+                <p class="q-mt-sm" style="text-align: justify">An email with reset instructions will be sent to your registered email address.</p>
 
                 <div class="text-subtitle2 text-black q-mb-none">
                     Email address<span style="color: red;">*</span>
                 </div>
                 <q-input
-                filled
-                dense
-                v-model="text"
-                class="no-focus"
-                input-class="text-black"
-                color="accent"
+                    filled
+                    dense
+                    v-model="text"
+                    class="no-focus q-mb-md"
+                    input-class="text-black"
+                    color="accent"
                 />
 
-                <q-btn unelevated no-caps label="Request password reset" class="q-mt-md q-mb-md text-white" style="background-color: #2463EA" />
+                <q-btn 
+                    unelevated 
+                    no-caps 
+                    label="Request password reset" 
+                    class="q-mt-md q-mb-lg text-white" 
+                    style="background-color: #2463EA" 
+                />
 
-                <router-link to="/" class="q-mb-md text-primary cursor-pointer block text-right" style="text-decoration: none;">
+                <router-link to="/" class="q-mb-sm text-primary cursor-pointer block text-right" style="text-decoration: none;">
                     Back to log in
                 </router-link>
             </div>

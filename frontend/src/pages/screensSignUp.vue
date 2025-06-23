@@ -53,12 +53,12 @@
                             First name<span style="color: red;">*</span>
                         </div>
                         <q-input
-                        filled
-                        dense
-                        v-model="text"
-                        class="no-focus"
-                        input-class="text-black"
-                        color="accent"
+                            filled
+                            dense
+                            v-model="text"
+                            class="no-focus"
+                            input-class="text-black"
+                            color="accent"
                         />
                     </div>
 
@@ -67,67 +67,67 @@
                             Last name<span style="color: red;">*</span>
                         </div>
                         <q-input
-                        filled
-                        dense
-                        v-model="text"
-                        class="no-focus"
-                        input-class="text-black"
-                        color="accent"
+                            filled
+                            dense
+                            v-model="text"
+                            class="no-focus"
+                            input-class="text-black"
+                            color="accent"
                         />
                     </div>
                 </div>
 
-                <div class="text-subtitle2 text-black">
+                <div class="q-mt-md text-subtitle2 text-black">
                     Email address<span style="color: red;">*</span>
                 </div>
                 <q-input
-                filled
-                dense
-                v-model="text"
-                class="no-focus"
-                input-class="text-black"
-                color="accent"
+                    filled
+                    dense
+                    v-model="text"
+                    class="no-focus"
+                    input-class="text-black"
+                    color="accent"
                 />
 
-                <div class="text-subtitle2 text-black" style="margin-bottom: 0;">
+                <div class="q-mt-md text-subtitle2 text-black" style="margin-bottom: 0;">
                     Phone number<span style="color: red;">*</span>
                 </div>
                 <q-input
-                filled
-                dense
-                v-model="text"
-                class="no-focus"
-                input-class="text-black"
-                color="accent"
+                    filled
+                    dense
+                    v-model="text"
+                    class="no-focus"
+                    input-class="text-black"
+                    color="accent"
                 />
 
-                <div class="text-subtitle2 text-black" style="margin-bottom: 0;">
+                <div class="q-mt-md text-subtitle2 text-black" style="margin-bottom: 0;">
                     Password<span style="color: red;">*</span>
                 </div>
                 <q-input
-                filled
-                dense
-                v-model="text"
-                class="no-focus"
-                input-class="text-black"
-                color="accent"
+                    filled
+                    dense
+                    v-model="text"
+                    class="no-focus"
+                    input-class="text-black"
+                    color="accent"
                 />
 
-                <div class="text-subtitle2 text-black" style="margin-bottom: 0;">
+                <div class="q-mt-md text-subtitle2 text-black" style="margin-bottom: 0;">
                     Confirm password<span style="color: red;">*</span>
                 </div>
                 <q-input
-                filled
-                dense
-                v-model="text"
-                class="no-focus"
-                input-class="text-black"
-                color="accent"
+                    filled
+                    dense
+                    v-model="text"
+                    class="no-focus"
+                    input-class="text-black"
+                    color="accent"
                 />
 
-                <q-btn unelevated no-caps label="Create Account" class="q-mt-md text-white" style="background-color: #2463EA" />
+                <q-btn unelevated no-caps label="Create Account" class="q-mt-lg text-white" style="background-color: #2463EA" />
 
-                <div class="q-mt-xs q-mb-xs flex items-center justify-center">
+                <div class="q-mt-md q-mb-md flex items-center justify-center">
                     <div style="flex: 1; height: 1px; background-color: #ccc;"></div>
                     <div class="q-px-sm text-caption text-grey-7">OR</div>
                     <div style="flex: 1; height: 1px; background-color: #ccc;"></div>

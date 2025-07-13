@@ -19,7 +19,7 @@
           <q-input
             filled
             dense
-            v-model="text"
+            v-model="email"
             placeholder="Enter your email"
             class="no-focus"
             input-class="text-black"
@@ -31,8 +31,8 @@
           <q-input
             filled
             dense
-            v-model="text"
-            placeholder="Enter your email"
+            v-model="password"
+            placeholder="Enter your password"
             class="no-focus"
             input-class="text-black"
             color="accent"

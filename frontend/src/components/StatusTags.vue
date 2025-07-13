@@ -37,8 +37,8 @@
         name: 'StatusTags',
         props: {
             bgColor: {
-            type: String,
-            default: '#e9f1ff'
+                type: String,
+                default: '#e9f1ff'
             }
         }
     }

@@ -15,6 +15,7 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 public class LaundryOrderRequestDTO {
+    private Long orderId;
 
     @NotBlank(message = "Tracking number is required")
     private String trackingNumber;

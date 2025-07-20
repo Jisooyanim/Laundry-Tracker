@@ -18,6 +18,10 @@ public class LaundryItem {
     @Column(nullable=false, name="item_id")
     private Long id;
 
+    @ManyToOne
+    @JoinColumn(name = "order_id", nullable = false)
+    private LaundryOrder order;
+
     @Column(nullable=false, name="type")
     private String serviceType;
 
@@ -29,8 +33,4 @@ public class LaundryItem {
 
     @Column(nullable=false, name="price")
     private BigDecimal price;
-
-    @ManyToOne
-    @JoinColumn(name = "order_id", nullable = false)
-    private LaundryOrder order;
 }

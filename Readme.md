@@ -63,3 +63,7 @@
 - [ ] Public page for tracking order via tracking number
 - [ ] Show status and pickup ETA
 - [ ] Post-pickup rating/feedback
+
+---
+## To add
+- [ ] Validate status transitions

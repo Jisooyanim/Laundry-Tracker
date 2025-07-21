@@ -2,6 +2,7 @@ package project.LaundryTracker.service;
 
 import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.Optional;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -95,43 +96,41 @@ public class LaundryOrderService {
     }
 
     @Transactional
-    public boolean updateLaundryOrder(LaundryOrderRequestDTO requestDTO) {
-        LaundryOrder laundryOrder = laundryOrderRepository.findById(requestDTO.getOrderId())
-                .orElseThrow(() -> new NoSuchElementException("Laundry Order not found."));
+    public Optional<LaundryOrder> updateLaundryOrder(LaundryOrderRequestDTO requestDTO) {
+        return laundryOrderRepository.findById(requestDTO.getOrderId())
+            .map(existingOrder -> {modelMapper.map(requestDTO, existingOrder);
 
-        modelMapper.map(requestDTO, laundryOrder);
+                if (existingOrder.getItems() != null && !existingOrder.getItems().isEmpty()) {
+                    BigDecimal totalPrice = computeTotalPrice(existingOrder.getItems());
+                    existingOrder.setTotalPrice(totalPrice);
+                } else {
+                    existingOrder.setTotalPrice(BigDecimal.ZERO);
+                }
 
-        BigDecimal totalPrice = computeTotalPrice(laundryOrder.getItems());
-        laundryOrder.setTotalPrice(totalPrice);
-
-        laundryOrderRepository.save(laundryOrder);
-        log.info("Updated laundry order with ID {}", laundryOrder.getId());
-        return true;
+                log.info("Updated laundry order with ID {}", existingOrder.getId());
+                return existingOrder;
+            });
     }
 
     @Transactional
-    public boolean markAsPickedup(LaundryOrderRequestDTO requestDTO) {
-        LaundryOrder laundryOrder = laundryOrderRepository.findById(requestDTO.getOrderId())
-                .orElseThrow(() -> new NoSuchElementException("Laundry Order not found."));
-
-        laundryOrder.setStatus(OrderStatus.PICKED_UP);
-        laundryOrder.setPickedUpAt(LocalDateTime.now());
-
-        laundryOrderRepository.save(laundryOrder);
-        log.info("Order {} marked as PICKED_UP", laundryOrder.getId());
-        return true;
+    public Optional<LaundryOrder> markAsPickedup(LaundryOrderRequestDTO requestDTO) {
+        return laundryOrderRepository.findById(requestDTO.getOrderId())
+            .map(order -> {
+                order.setStatus(OrderStatus.PICKED_UP);
+                order.setPickedUpAt(LocalDateTime.now());
+                log.info("Order {} marked as PICKED_UP at {}", order.getId(), order.getPickedUpAt());
+                return order;
+            });
     }
 
     @Transactional
-    public boolean updateStatus(LaundryOrderRequestDTO requestDTO) {
-        LaundryOrder laundryOrder = laundryOrderRepository.findById(requestDTO.getOrderId())
-                .orElseThrow(() -> new NoSuchElementException("Laundry Order not found."));
-
-        laundryOrder.setStatus(requestDTO.getStatus());
-        laundryOrderRepository.save(laundryOrder);
-
-        log.info("Updated order status for order {} to {}", laundryOrder.getId(), requestDTO.getStatus());
-        return true;
+    public Optional<LaundryOrder> updateStatus(LaundryOrderRequestDTO requestDTO) {
+        return laundryOrderRepository.findById(requestDTO.getOrderId())
+            .map(order -> {
+                order.setStatus(requestDTO.getStatus());
+                log.info("Updated status of order {} to {}", order.getId(), requestDTO.getStatus());
+                return order;
+            });
     }
 
     @Transactional

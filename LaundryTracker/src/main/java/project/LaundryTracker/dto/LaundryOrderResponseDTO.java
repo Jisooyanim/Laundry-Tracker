@@ -14,7 +14,7 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 public class LaundryOrderResponseDTO extends BaseModelDTO {
-    private Long id;
+    private Long orderId;
     private String trackingNumber;
     private OrderStatus status;
     private LocalDateTime dropOffDate;
